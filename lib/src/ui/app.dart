@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_ios_calculator/src/components/black_button.dart';
+import 'package:my_ios_calculator/src/components/grey_button.dart';
 import 'package:my_ios_calculator/src/components/orange_buttion.dart';
 import 'package:my_ios_calculator/src/constants/button_color.dart';
 
@@ -15,7 +16,7 @@ class App extends StatelessWidget {
         child: Scaffold(
           body: Column(
             children: [
-              Expanded(flex: 3, child: _result()),
+              Expanded(flex: 2, child: _result()),
               Expanded(flex: 7, child: _button()),
             ],
           ),
@@ -26,7 +27,7 @@ class App extends StatelessWidget {
 
   Widget _result() {
     return const Padding(
-      padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+      padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 1.0),
       child: Align(
         alignment: Alignment.bottomRight,
         child: SelectableText(
@@ -52,7 +53,27 @@ class App extends StatelessWidget {
   }
 
   Widget _firstRow() {
-    return const Row();
+    return const Padding(
+      padding: EdgeInsets.all(8.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          GreyButton(child: 'AC'),
+          GreyButton(child: '+/-'),
+          GreyButton(child: '%'),
+          OrangeButton(
+              icon: Icon(
+                CupertinoIcons.divide,
+                size: 35,
+              ),
+              activeIcon: Icon(
+                CupertinoIcons.divide,
+                size: 35,
+              ),
+              isClick: false),
+        ],
+      ),
+    );
   }
 
   Widget _secondRow() {
@@ -75,11 +96,11 @@ class App extends StatelessWidget {
           ),
           OrangeButton(
               icon: Icon(
-                CupertinoIcons.add,
+                CupertinoIcons.multiply,
                 size: 35,
               ),
               activeIcon: Icon(
-                CupertinoIcons.add,
+                CupertinoIcons.multiply,
                 size: 35,
               ),
               isClick: false),
@@ -108,11 +129,11 @@ class App extends StatelessWidget {
           ),
           OrangeButton(
               icon: Icon(
-                CupertinoIcons.add,
+                CupertinoIcons.minus,
                 size: 35,
               ),
               activeIcon: Icon(
-                CupertinoIcons.add,
+                CupertinoIcons.minus,
                 size: 35,
               ),
               isClick: false),
@@ -141,11 +162,11 @@ class App extends StatelessWidget {
           ),
           OrangeButton(
               icon: Icon(
-                CupertinoIcons.add,
+                CupertinoIcons.plus,
                 size: 35,
               ),
               activeIcon: Icon(
-                CupertinoIcons.add,
+                CupertinoIcons.plus,
                 size: 35,
               ),
               isClick: false),
@@ -156,7 +177,7 @@ class App extends StatelessWidget {
 
   Widget _fifthRow() {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -174,12 +195,12 @@ class App extends StatelessWidget {
             isClick: false,
             onPressed: () {},
             icon: Icon(
-              CupertinoIcons.add,
+              CupertinoIcons.equal,
               color: ButtonColor.white,
               size: 35,
             ),
             activeIcon: Icon(
-              CupertinoIcons.add,
+              CupertinoIcons.equal,
               color: ButtonColor.orange,
               size: 35,
             ),

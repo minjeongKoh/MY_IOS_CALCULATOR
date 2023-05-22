@@ -4,7 +4,8 @@ import '../constants/button_size.dart';
 
 class GreyButton extends StatelessWidget {
   final void Function()? onPressed;
-  final Widget child;
+  final String child;
+
   const GreyButton({super.key, this.onPressed, required this.child});
 
   @override
@@ -17,7 +18,10 @@ class GreyButton extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         color: ButtonColor.grey,
         onPressed: () {},
-        child: child,
+        child: Text(
+          child,
+          style: TextStyle(fontSize: 35),
+        ),
       ),
     );
   }
