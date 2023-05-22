@@ -52,50 +52,140 @@ class App extends StatelessWidget {
   }
 
   Widget _firstRow() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        BlackButton(
-          onPressed: () {},
-          type: Type.FLAT,
-          child: '0',
-        ),
-        BlackButton(
-          type: Type.ROUND,
-          child: '.',
-          onPressed: () {},
-        ),
-        OrangeButton(
-          isClick: false,
-          onPressed: () {},
-          icon: Icon(
-            CupertinoIcons.add,
-            color: ButtonColor.white,
-            size: 35,
-          ),
-          activeIcon: Icon(
-            CupertinoIcons.add,
-            color: ButtonColor.orange,
-            size: 35,
-          ),
-        ),
-      ],
-    );
+    return const Row();
   }
 
   Widget _secondRow() {
-    return Container();
+    return const Padding(
+      padding: EdgeInsets.all(8.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          BlackButton(
+            type: Type.ROUND,
+            child: '7',
+          ),
+          BlackButton(
+            type: Type.ROUND,
+            child: '8',
+          ),
+          BlackButton(
+            type: Type.ROUND,
+            child: '9',
+          ),
+          OrangeButton(
+              icon: Icon(
+                CupertinoIcons.add,
+                size: 35,
+              ),
+              activeIcon: Icon(
+                CupertinoIcons.add,
+                size: 35,
+              ),
+              isClick: false),
+        ],
+      ),
+    );
   }
 
   Widget _thirdRow() {
-    return Container();
+    return const Padding(
+      padding: EdgeInsets.all(8.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          BlackButton(
+            type: Type.ROUND,
+            child: '4',
+          ),
+          BlackButton(
+            type: Type.ROUND,
+            child: '5',
+          ),
+          BlackButton(
+            type: Type.ROUND,
+            child: '6',
+          ),
+          OrangeButton(
+              icon: Icon(
+                CupertinoIcons.add,
+                size: 35,
+              ),
+              activeIcon: Icon(
+                CupertinoIcons.add,
+                size: 35,
+              ),
+              isClick: false),
+        ],
+      ),
+    );
   }
 
   Widget _fourthRow() {
-    return Container();
+    return const Padding(
+      padding: EdgeInsets.all(8.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          BlackButton(
+            type: Type.ROUND,
+            child: '1',
+          ),
+          BlackButton(
+            type: Type.ROUND,
+            child: '2',
+          ),
+          BlackButton(
+            type: Type.ROUND,
+            child: '3',
+          ),
+          OrangeButton(
+              icon: Icon(
+                CupertinoIcons.add,
+                size: 35,
+              ),
+              activeIcon: Icon(
+                CupertinoIcons.add,
+                size: 35,
+              ),
+              isClick: false),
+        ],
+      ),
+    );
   }
 
   Widget _fifthRow() {
-    return Container();
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          BlackButton(
+            onPressed: () {},
+            type: Type.FLAT,
+            child: '0',
+          ),
+          BlackButton(
+            type: Type.ROUND,
+            child: '.',
+            onPressed: () {},
+          ),
+          OrangeButton(
+            isClick: false,
+            onPressed: () {},
+            icon: Icon(
+              CupertinoIcons.add,
+              color: ButtonColor.white,
+              size: 35,
+            ),
+            activeIcon: Icon(
+              CupertinoIcons.add,
+              color: ButtonColor.orange,
+              size: 35,
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
